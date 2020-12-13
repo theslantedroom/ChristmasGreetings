@@ -1,0 +1,203 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Mountains of Christmas', cursive;
+}
+
+
+body {
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../img/textureChristmas.jpg');
+}
+.bodyState2{
+	background-image: url('../img/texture3dark.jpg');
+}
+
+div{
+	font-size: 20px;
+}
+.banner{
+	overflow: hidden;
+	color:#2c2f41;
+	/* font-family: 'Trade Winds', cursive; */
+	font-family: 'Mountains of Christmas', cursive;
+	font-size: 20px;
+	text-align: center;
+	background-position:center top;
+	background-color: #ff7878;
+	background-image: linear-gradient(315deg, #ff7878 0%, #74d680 74%);
+	background-size: cover;
+	background-repeat: no-repeat;
+	/* height: 120px; */
+	margin: auto;
+	padding: 3px;
+	transition: all 800ms;
+	z-index: 1;
+}
+.mouseOverBanner{
+
+	color: #89ffe7;
+	font-size: 30px;
+}
+
+.navSingleButton{
+
+	color: #489c52;
+	font-size: 20px;
+	background-image: url('../img/textureChristmas2.jpg');
+	top: 0px;
+	text-align: center;
+	padding: 20px;
+	/* height: 180px; */
+	font-size: 40px;
+	transition: all 800ms;
+}
+.navSingleButton:hover{
+	color: #114b3f;
+	background-color: #de4256;
+	background-image: linear-gradient(315deg, #de4256 0%, #b78e51 74%);
+	
+}
+
+.navSingleButton:hover{
+	background-color: #DB6885;
+	cursor: pointer;
+}
+
+.navItem{
+	color: #FF0000;
+	font-size: 20px;
+	background-color: #ff7878;
+	overflow: hidden;
+	top: 0px;
+	text-align: center;
+	padding: 0px;
+	height: 0px;
+	transition: all 800ms;
+	line-height: 2.2;
+	cursor: pointer;
+}
+.navItem:hover{
+	background-color: #74d680;
+	color: #30412c;
+}
+
+.navSingleButtonOpen{
+	height: 45px;
+	color: #2c2f41;
+	margin: auto;
+	font-size: 20px;
+	/* background-color: #000803; */
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position: top;
+	max-height: 500px;
+}
+
+.navItem.navSingleButtonOpen.openNav1{
+	background-image: url('../img/nav1.jpg');
+	height: 100vw;
+	max-height: 100vw;
+	max-height: 500px;
+	color: aliceblue;
+
+}
+
+.navItem.navSingleButtonOpen.openNav2{
+	background-image: url('../img/nav2.jpg');
+	height: 100vw;
+	max-height: 100vw;
+	max-height: 500px;
+	color: aliceblue;
+}
+
+.navItem.navSingleButtonOpen.openNav3{
+	background-image: url('../img/nav3.jpg');
+	height: 100vw;
+	max-height: 100vw;
+	max-height: 500px;
+	color: aliceblue;
+}
+
+
+
+
+.ab{
+	top: -600px;
+	right: -0;
+	transform: rotate(-180deg);
+	background-image: url('../img/abxmasthug.png');
+	transition: all 400ms;
+	position: absolute;
+	height: 40vw;
+	width: 40vw;
+	background-size: contain;
+	z-index: 3;
+}
+.sy{
+	top: -600px;
+	left: -0;
+	/* transform: rotate(-180deg); */
+	background-image: url('../img/syxmasthug.png');
+	transition: all 600ms;
+	position: absolute;
+	height: 40vw;
+	width: 40vw;
+	background-size: contain;
+	z-index: 3;
+}
+
+.milo{
+	bottom: -500px;
+	right: -0;
+	/* transform: rotate(-180deg); */
+	background-image: url('../img/milo.png');
+	transition: all 1200ms;
+	position: absolute;
+	height: 40vw;
+	width: 40vw;
+	background-size: contain;
+	z-index: 3;
+}
+
+.kispy{
+	bottom: -500px;
+	left: -0;
+	/* transform: rotate(-180deg); */
+	background-image: url('../img/kispy.png');
+	transition: all 1200ms;
+	position: absolute;
+	height: 40vw;
+	width: 40vw;
+	background-size: contain;
+	z-index: 3;
+}
+
+.ab.inview{
+	top: 0;
+
+}
+.sy.inview{
+	top: 0;
+
+}
+
+.milo.inview{
+	bottom: 0;
+
+}
+.kispy.inview{
+	bottom: 0;
+
+}
+
+.gift3open{
+	color: red;
+}
+.gift3open:hover{
+	color: rgb(143, 0, 0);
+}
