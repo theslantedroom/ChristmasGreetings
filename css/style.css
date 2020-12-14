@@ -24,7 +24,7 @@ div{
 	color:#2c2f41;
 	/* font-family: 'Trade Winds', cursive; */
 	font-family: 'Mountains of Christmas', cursive;
-	font-size: 20px;
+	font-size: 25px;
 	text-align: center;
 	background-position:center top;
 	background-color: #ff7878;
@@ -39,8 +39,6 @@ div{
 }
 .mouseOverBanner{
 
-	color: #89ffe7;
-	font-size: 30px;
 }
 
 .navSingleButton{

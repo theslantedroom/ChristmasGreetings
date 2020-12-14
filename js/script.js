@@ -32,18 +32,18 @@ setInterval(() => {
   if (globalCounter == 1){
     banner.innerHTML = `
     <i class="fas fa-socks"></i>
-    <i class="fas fa-holly-berry">
+
     <span>Fröhliche Weihnachten</span>
-    <i class="fas fa-holly-berry">
+
     <i class="fas fa-socks"></i>
     </i>`;
   } else {
 
     banner.innerHTML = `
     <i class="fas fa-socks"></i>
-    <i class="fas fa-holly-berry">
+
     <span>Merry Christmas</span>
-    <i class="fas fa-holly-berry">
+
     <i class="fas fa-socks"></i>
     </i>`;
   } ;
