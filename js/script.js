@@ -2,11 +2,9 @@
 
 // main counter
 let globalCounter = 1;
-console.log('globalCounter', globalCounter);
 
 setInterval(() => {
   globalCounter += 1
-  console.log('globalCounter', globalCounter);
   if (globalCounter == 2){globalCounter = 0};
 }, 4000);
   
@@ -83,7 +81,7 @@ setInterval(() => {
     createMenuItem('div', "kispy", '', 'kispy');
 
     navSingleButton.innerHTML = `<span>
-    <i class="fas fa-candy-cane"></i>
+    <i class="fas fa-gifts"></i>
     </span>`;
 
     navSingleButton.addEventListener('click', function(){
@@ -114,31 +112,32 @@ nav1.addEventListener('click', function(){
   nav1.classList.add('openNav1');
   nav2.classList.remove('openNav2');
   nav3.classList.remove('openNav3');
+  clearInterval(nav2Loop);
+  clearInterval(nav3Loop);
   nav2.innerHTML = `<i class="fas fa-gift"></i>`;
   nav3.innerHTML = `<i class="fas fa-gift"></i>`;
-  nav1.style.backgroundColor = 'white';
+  nav1.style.backgroundColor = '#489c52';
   nav1.innerHTML = `
   <i class="fas fa-candy-cane"></i>
   von annabel und steve
   <i class="fas fa-candy-cane"></i>
   `
-  clearInterval(nav2Loop);
-  clearInterval(nav3Loop);
+
   let nav1counter = 0;
   nav1Loop = setInterval(() => {
     switch(nav1counter) {
       case 0:
         nav1.innerHTML = `
-        <i class="fas fa-gifts"></i>
+        <i class="fas fa-candy-cane"></i>
         from Annabel and Steve
-        <i class="fas fa-gifts"></i>
+        <i class="fas fa-candy-cane"></i>
         `
         break;
       case 1:
         nav1.innerHTML = `
-        <i class="fas fa-gifts"></i>
+        <i class="fas fa-candy-cane"></i>
         von annabel und steve
-        <i class="fas fa-gifts"></i>
+        <i class="fas fa-candy-cane"></i>
         `
         break;
       case 2:
@@ -152,11 +151,6 @@ nav1.addEventListener('click', function(){
       nav1counter += 1;
     }; 
   }, 3000);
-
-
-
-
-  
 })
 
 
@@ -164,25 +158,26 @@ nav2.addEventListener('click', function(){
   nav1.classList.remove('openNav1');
   nav2.classList.add('openNav2');
   nav3.classList.remove('openNav3');
+  clearInterval(nav1Loop);
+  clearInterval(nav3Loop);
   nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   nav3.innerHTML = `<i class="fas fa-gift"></i>`;
-  nav2.style.backgroundColor = 'white';
+  nav2.style.backgroundColor = '#489c52';
   nav2.innerHTML = `
   <i class="fas fa-heart"></i>
   wir werden dich bald sehen
   <i class="fas fa-heart"></i>
   `;
 
-  clearInterval(nav1Loop);
-  clearInterval(nav3Loop);
+
   let nav2counter = 0;
   nav2Loop = setInterval(() => {
     switch(nav2counter) {
       case 0:
         nav2.innerHTML = `
-        <i class="fas fa-gifts"></i>
+        <i class="fas fa-heart"></i>
         we will see you soon
-        <i class="fas fa-gifts"></i>
+        <i class="fas fa-heart"></i>
         `
         break;
       case 1:
@@ -192,12 +187,9 @@ nav2.addEventListener('click', function(){
         <i class="fas fa-heart"></i>
         `
         break;
-      case 2:
-        nav2.innerHTML = `<i class="fas fa-glass-cheers"></i>`;
-      break;
       default:
     }
-    if(nav2counter == 2){
+    if(nav2counter == 1){
       nav2counter = 0;
     } else{
       nav2counter += 1;
@@ -211,11 +203,13 @@ nav3.addEventListener('click', function(){
   nav1.classList.remove('openNav1');
   nav2.classList.remove('openNav2');
   nav3.classList.add('openNav3');
+  clearInterval(nav2Loop);
+  clearInterval(nav1Loop);
   nav2.innerHTML = `<i class="fas fa-gift"></i>`;
   nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   document.body.classList.add('bodyState2');
   
-  nav3.style.backgroundColor = 'white';
+  nav3.style.backgroundColor = '#489c52';
   nav3.innerHTML = `<i class="fas fa-glass-cheers"></i>`;
   let sy=  document.getElementById('sy');
   let ab=  document.getElementById('ab');
@@ -242,8 +236,7 @@ nav3.addEventListener('click', function(){
   kispy.classList.remove('inview'); 
   }, 1500);
 
-  clearInterval(nav2Loop);
-  clearInterval(nav1Loop);
+
   let nav3counter = 0;
   nav3Loop = setInterval(() => {
     switch(nav3counter) {
