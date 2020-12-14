@@ -16,7 +16,7 @@ let nav3Loop;
   function createHTML(type, className) {
     const newElement = document.createElement(type);
     newElement.classList.add(className)
-    document.body.appendChild(newElement); 
+    document.getElementById('container').appendChild(newElement); 
   };
 
   (function allBuildHTML(){
@@ -73,7 +73,7 @@ setInterval(() => {
         const newElement = document.createElement(type);
         newElement.classList.add(className);
         newElement.id = id;
-        document.body.appendChild(newElement); 
+        document.getElementById('container').appendChild(newElement); 
         newElement.innerText = text;
       };
 
@@ -100,9 +100,10 @@ setInterval(() => {
       
         for (i = 0; i < 3; i++) {
           let newNavItem = document.getElementsByClassName("navItem")[i];
-          newNavItem.classList.toggle('navSingleButtonOpen');
+          newNavItem.classList.add('navSingleButtonOpen');
           newNavItem.innerHTML = `<i class="fas fa-gift"></i>`;
           }  
+          navSingleButton.innerHTML = `Open a Suprise`
     });
 
 }());
@@ -112,6 +113,11 @@ const navItem = (index) => document.querySelectorAll('nav')[index];
 const nav1 = document.getElementById('nav1');
 const nav2 = document.getElementById('nav2');
 const nav3 = document.getElementById('nav3');
+const focusPresent = (close1, close2) => {
+  document.getElementsByClassName("navItem")[close1].classList.remove('navSingleButtonOpen')
+  document.getElementsByClassName("navItem")[close2].classList.remove('navSingleButtonOpen')
+  document.getElementsByClassName("navSingleButton")[0].innerHTML = `Open another?`
+};
 
 
 nav1.addEventListener('click', function(){
@@ -121,9 +127,12 @@ nav1.addEventListener('click', function(){
   clearInterval(nav1Loop);
   clearInterval(nav2Loop);
   clearInterval(nav3Loop);
+  focusPresent(1,2);
+  document.getElementById("sfx1").play();
+
   nav2.innerHTML = `<i class="fas fa-gift"></i>`;
   nav3.innerHTML = `<i class="fas fa-gift"></i>`;
-  nav1.style.backgroundColor = '#489c52';
+  nav1.style.backgroundColor = '#9e0000';
 
   let milo=  document.getElementById('milo');
   let kispy=  document.getElementById('kispy');
@@ -182,9 +191,11 @@ nav2.addEventListener('click', function(){
   clearInterval(nav1Loop);
   clearInterval(nav2Loop);
   clearInterval(nav3Loop);
+  focusPresent(0,2);
+  document.getElementById("sfx2").play();
   nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   nav3.innerHTML = `<i class="fas fa-gift"></i>`;
-  nav2.style.backgroundColor = '#489c52';
+  nav2.style.backgroundColor = '#9e0000';
 
   let sy=  document.getElementById('sy');
   let ab=  document.getElementById('ab');
@@ -240,11 +251,13 @@ nav3.addEventListener('click', function(){
   clearInterval(nav1Loop);
   clearInterval(nav2Loop);
   clearInterval(nav3Loop);
+  focusPresent(0,1);
+  document.getElementById("sfx3").play();
   nav2.innerHTML = `<i class="fas fa-gift"></i>`;
   nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   document.body.classList.add('bodyState2');
   
-  nav3.style.backgroundColor = '#489c52';
+  nav3.style.backgroundColor = '#9e0000';
   nav3.innerHTML = `<i class="fas fa-glass-cheers"></i>`;
   let sy=  document.getElementById('sy');
   let ab=  document.getElementById('ab');

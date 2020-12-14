@@ -7,57 +7,141 @@
 
 
 body {
-	overflow: hidden;
 	width: 100vw;
-	height: 100vh;
-	background-image: url('../img/textureChristmas.jpg');
+	height: 100vw;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+
+
 }
 .bodyState2{
 	background-image: url('../img/texture3dark.jpg');
 }
+	#container{
+		margin: 0px;
+		position: relative;
+		background-color: #9e0000;
+		box-sizing: border-box;
+		width: 100vmin;
+		max-width: 500px;
+		height: 150vw;
+		max-height: 800px;
+		overflow: hidden;
+	}
+	
+	#frame{	
+		border: 3px solid #000;
+		position: absolute;
+		background-image: url('../img/frame.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		width: 100%;
+		max-width: 500px;
+		height: 150vw;
+		max-height: 800px;
+		z-index: 2;
+		pointer-events: none;
+	
+	}
 
-div{
-	font-size: 20px;
-}
-.banner{
-	overflow: hidden;
-	color:#2c2f41;
-	/* font-family: 'Trade Winds', cursive; */
-	font-family: 'Mountains of Christmas', cursive;
-	font-size: 25px;
-	text-align: center;
-	background-position:center top;
-	background-color: #ff7878;
-	background-image: linear-gradient(315deg, #ff7878 0%, #74d680 74%);
-	background-size: cover;
-	background-repeat: no-repeat;
-	/* height: 120px; */
-	margin: auto;
-	padding: 3px;
-	transition: all 800ms;
-	z-index: 1;
-}
-.mouseOverBanner{
+	.banner{
+		position: absolute;
+		width: 100%;
+		overflow: hidden;
+		color:#2c2f41;
+		font-family: 'Mountains of Christmas', cursive;
+		text-align: center;
+		background-position:center top;
+		background-color: #ff7878;
+		background-image: linear-gradient(315deg, #ff7878 0%, #74d680 74%);
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin: auto;
+		/* transition: all 800ms; */
+		z-index: 1;
+	}
+	
+/* LAPtop */
+@media screen and (min-width: 501px) { 
+	div{
+		font-size: 3vh ;
+	}
+	#container > .banner{
+		top: 161px;
+	} 
+	#container > .navSingleButton{top: 200px;}
+	#container > .navItem{top: 258px;}
 
+	#container > .navSingleButtonOpen{
+		height: 65px;
+		font-size: 1em;
+	}
+	#container > .navItem.navSingleButtonOpen.openNav1{
+		height: 400px;
+	}
+	
+	#container > .navItem.navSingleButtonOpen.openNav2{
+		height: 400px;
+	}
+	
+	#container > .navItem.navSingleButtonOpen.openNav3{
+		height: 400px;
+	}
 }
+
+/* PHONE */
+@media screen and (max-width: 500px) { 
+	div{
+		font-size: 3vw ;
+	}
+	#container > .banner{
+		top: 30vw;
+		font-size: 2em;
+	} 
+	#container > .navSingleButton{
+		top: 38vw;
+		font-size: 3em;
+	}
+	#container > .navItem{
+		top: 60vw;
+	}
+
+	#container > .navSingleButtonOpen{
+		height: 20vw;
+		font-size: 2.5em;
+	}
+	#container > .navItem.navSingleButtonOpen.openNav1{
+		height: 73vw;
+	}
+	
+	#container > .navItem.navSingleButtonOpen.openNav2{
+		height: 73vw;
+	}
+	
+	#container > .navItem.navSingleButtonOpen.openNav3{
+		height: 73vw;
+	}
+} 
+
+
 
 .navSingleButton{
-
-	color: #489c52;
-	font-size: 20px;
+	padding: 10px;
+	width: 100%;
+	position: absolute;
+	color: #cbdfce;
+	font-size: 1em;
 	background-image: url('../img/textureChristmas2.jpg');
-	top: 0px;
 	text-align: center;
-	padding: 20px;
-	/* height: 180px; */
-	font-size: 40px;
-	transition: all 800ms;
+	font-size: 1em;
+	/* transition: all 800ms; */
 }
 .navSingleButton:hover{
-	color: #114b3f;
+	color: #ffffff;
 	background-color: #de4256;
-	background-image: linear-gradient(315deg, #de4256 0%, #b78e51 74%);
-	
+	background-imarrrge: linear-gradient(315deg, #de4256 0%, #b78e51 74%);
+
 }
 
 .navSingleButton:hover{
@@ -66,11 +150,13 @@ div{
 }
 
 .navItem{
+	width: 100%;
+
+	position: relative;
 	color: #FF0000;
-	font-size: 20px;
-	background-color: #ff7878;
+	font-size: 1em;
+	background-color: #f5d9b9;
 	overflow: hidden;
-	top: 0px;
 	text-align: center;
 	padding: 0px;
 	height: 0px;
@@ -84,11 +170,9 @@ div{
 }
 
 .navSingleButtonOpen{
-	height: 45px;
+	height: 20vmin;
 	color: #2c2f41;
 	margin: auto;
-	font-size: 20px;
-	/* background-color: #000803; */
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -96,28 +180,25 @@ div{
 	max-height: 500px;
 }
 
-.navItem.navSingleButtonOpen.openNav1{
+#container > .navItem.navSingleButtonOpen.openNav1{
 	background-image: url('../img/nav1.jpg');
-	height: 100vw;
 	max-height: 100vw;
 	max-height: 500px;
 	color: aliceblue;
 
 }
 
-.navItem.navSingleButtonOpen.openNav2{
+#container > .navItem.navSingleButtonOpen.openNav2{
 	background-image: url('../img/nav2.jpg');
-	height: 100vw;
 	max-height: 100vw;
 	max-height: 500px;
 	color: aliceblue;
 }
 
-.navItem.navSingleButtonOpen.openNav3{
+#container > .navItem.navSingleButtonOpen.openNav3{
 	background-image: url('../img/nav3.jpg');
-	height: 100vw;
 	max-height: 100vw;
-	max-height: 500px;
+	max-height: 400px;
 	color: rgb(255, 255, 255);
 }
 
@@ -131,8 +212,8 @@ div{
 	background-image: url('../img/abxmasthug.png');
 	transition: all 400ms;
 	position: absolute;
-	height: 40vw;
-	width: 40vw;
+	height: 30vmin;
+	width: 30vmin;
 	max-width: 300px;
 	max-height: 300px;
 	background-size: contain;
@@ -145,8 +226,8 @@ div{
 	background-image: url('../img/syxmasthug.png');
 	transition: all 600ms;
 	position: absolute;
-	height: 40vw;
-	width: 40vw;
+	height: 30vmin;
+	width: 30vmin;
 	max-width: 300px;
 	max-height: 300px;
 	background-size: contain;
@@ -160,8 +241,8 @@ div{
 	background-image: url('../img/milo.png');
 	transition: all 800ms;
 	position: absolute;
-	height: 40vw;
-	width: 40vw;
+	height: 30vmin;
+	width: 30vmin;
 	max-width: 300px;
 	max-height: 300px;
 	background-size: contain;
@@ -175,8 +256,8 @@ div{
 	background-image: url('../img/kispy.png');
 	transition: all 900ms;
 	position: absolute;
-	height: 40vw;
-	width: 40vw;
+	height: 30vmin;
+	width: 30vmin;
 	max-width: 300px;
 	max-height: 300px;
 	background-size: contain;
@@ -207,3 +288,4 @@ div{
 .gift3open:hover{
 
 }
+
