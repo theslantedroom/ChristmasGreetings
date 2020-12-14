@@ -158,7 +158,7 @@ div{
 	right: -0;
 	/* transform: rotate(-180deg); */
 	background-image: url('../img/milo.png');
-	transition: all 1200ms;
+	transition: all 800ms;
 	position: absolute;
 	height: 40vw;
 	width: 40vw;
@@ -173,7 +173,7 @@ div{
 	left: -0;
 	/* transform: rotate(-180deg); */
 	background-image: url('../img/kispy.png');
-	transition: all 1200ms;
+	transition: all 900ms;
 	position: absolute;
 	height: 40vw;
 	width: 40vw;

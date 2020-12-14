@@ -87,6 +87,12 @@ setInterval(() => {
     </span>`;
 
     navSingleButton.addEventListener('click', function(){
+      nav1.classList.remove('openNav1');
+      nav2.classList.remove('openNav2');
+      nav3.classList.remove('openNav3');
+      clearInterval(nav1Loop);
+      clearInterval(nav2Loop);
+      clearInterval(nav3Loop);
       
         for (i = 0; i < 3; i++) {
           let newNavItem = document.getElementsByClassName("navItem")[i];
@@ -94,10 +100,6 @@ setInterval(() => {
           newNavItem.innerHTML = `<i class="fas fa-gift"></i>`;
           }  
     });
-
-    
-    // popup heads
-
 
 }());
 
@@ -119,6 +121,20 @@ nav1.addEventListener('click', function(){
   nav2.innerHTML = `<i class="fas fa-gift"></i>`;
   nav3.innerHTML = `<i class="fas fa-gift"></i>`;
   nav1.style.backgroundColor = '#489c52';
+
+  let milo=  document.getElementById('milo');
+  let kispy=  document.getElementById('kispy');
+
+  milo.classList.add('inview');
+  setTimeout(() => {
+    milo.classList.remove('inview'); 
+  }, 800);
+
+  kispy.classList.add('inview');
+  setTimeout(() => {
+  kispy.classList.remove('inview'); 
+  }, 800);
+
   nav1.innerHTML = `
   <i class="fas fa-candy-cane"></i>
   von annabel und steve
@@ -165,12 +181,24 @@ nav2.addEventListener('click', function(){
   nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   nav3.innerHTML = `<i class="fas fa-gift"></i>`;
   nav2.style.backgroundColor = '#489c52';
+
+  let sy=  document.getElementById('sy');
+  let ab=  document.getElementById('ab');
+
+  sy.classList.add('inview');
+  setTimeout(() => {
+  sy.classList.remove('inview'); 
+  }, 500);
+  ab.classList.add('inview');
+  setTimeout(() => {
+  ab.classList.remove('inview'); 
+  }, 500);
+
   nav2.innerHTML = `
   <i class="fas fa-heart"></i>
   wir werden dich bald sehen
   <i class="fas fa-heart"></i>
   `;
-
 
   let nav2counter = 0;
   nav2Loop = setInterval(() => {
