@@ -7,6 +7,10 @@ setInterval(() => {
   globalCounter += 1
   if (globalCounter == 2){globalCounter = 0};
 }, 4000);
+
+let nav1Loop;
+let nav2Loop;
+let nav3Loop;
   
   
   function createHTML(type, className) {
@@ -108,9 +112,7 @@ const navItem = (index) => document.querySelectorAll('nav')[index];
 const nav1 = document.getElementById('nav1');
 const nav2 = document.getElementById('nav2');
 const nav3 = document.getElementById('nav3');
-let nav1Loop;
-let nav2Loop;
-let nav3Loop;
+
 
 nav1.addEventListener('click', function(){
   nav1.classList.add('openNav1');
