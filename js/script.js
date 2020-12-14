@@ -118,6 +118,7 @@ nav1.addEventListener('click', function(){
   nav1.classList.add('openNav1');
   nav2.classList.remove('openNav2');
   nav3.classList.remove('openNav3');
+  clearInterval(nav1Loop);
   clearInterval(nav2Loop);
   clearInterval(nav3Loop);
   nav2.innerHTML = `<i class="fas fa-gift"></i>`;
@@ -179,6 +180,7 @@ nav2.addEventListener('click', function(){
   nav2.classList.add('openNav2');
   nav3.classList.remove('openNav3');
   clearInterval(nav1Loop);
+  clearInterval(nav2Loop);
   clearInterval(nav3Loop);
   nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   nav3.innerHTML = `<i class="fas fa-gift"></i>`;
@@ -235,8 +237,9 @@ nav3.addEventListener('click', function(){
   nav1.classList.remove('openNav1');
   nav2.classList.remove('openNav2');
   nav3.classList.add('openNav3');
-  clearInterval(nav2Loop);
   clearInterval(nav1Loop);
+  clearInterval(nav2Loop);
+  clearInterval(nav3Loop);
   nav2.innerHTML = `<i class="fas fa-gift"></i>`;
   nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   document.body.classList.add('bodyState2');
