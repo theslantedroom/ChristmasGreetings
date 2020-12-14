@@ -120,7 +120,7 @@ div{
 	height: 100vw;
 	max-height: 100vw;
 	max-height: 500px;
-	color: aliceblue;
+	color: rgb(255, 255, 255);
 }
 
 
@@ -135,6 +135,8 @@ div{
 	position: absolute;
 	height: 40vw;
 	width: 40vw;
+	max-width: 300px;
+	max-height: 300px;
 	background-size: contain;
 	z-index: 3;
 }
@@ -147,6 +149,8 @@ div{
 	position: absolute;
 	height: 40vw;
 	width: 40vw;
+	max-width: 300px;
+	max-height: 300px;
 	background-size: contain;
 	z-index: 3;
 }
@@ -160,6 +164,8 @@ div{
 	position: absolute;
 	height: 40vw;
 	width: 40vw;
+	max-width: 300px;
+	max-height: 300px;
 	background-size: contain;
 	z-index: 3;
 }
@@ -173,6 +179,8 @@ div{
 	position: absolute;
 	height: 40vw;
 	width: 40vw;
+	max-width: 300px;
+	max-height: 300px;
 	background-size: contain;
 	z-index: 3;
 }
@@ -196,8 +204,8 @@ div{
 }
 
 .gift3open{
-	color: red;
+
 }
 .gift3open:hover{
-	color: rgb(143, 0, 0);
+
 }

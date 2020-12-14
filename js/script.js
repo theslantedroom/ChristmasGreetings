@@ -106,20 +106,26 @@ const navItem = (index) => document.querySelectorAll('nav')[index];
 const nav1 = document.getElementById('nav1');
 const nav2 = document.getElementById('nav2');
 const nav3 = document.getElementById('nav3');
+let nav1Loop;
+let nav2Loop;
+let nav3Loop;
 
 nav1.addEventListener('click', function(){
-  nav1.classList.toggle('openNav1');
+  nav1.classList.add('openNav1');
   nav2.classList.remove('openNav2');
   nav3.classList.remove('openNav3');
+  nav2.innerHTML = `<i class="fas fa-gift"></i>`;
+  nav3.innerHTML = `<i class="fas fa-gift"></i>`;
   nav1.style.backgroundColor = 'white';
   nav1.innerHTML = `
   <i class="fas fa-candy-cane"></i>
   von annabel und steve
   <i class="fas fa-candy-cane"></i>
   `
-
+  clearInterval(nav2Loop);
+  clearInterval(nav3Loop);
   let nav1counter = 0;
-  setInterval(() => {
+  nav1Loop = setInterval(() => {
     switch(nav1counter) {
       case 0:
         nav1.innerHTML = `
@@ -156,9 +162,10 @@ nav1.addEventListener('click', function(){
 
 nav2.addEventListener('click', function(){
   nav1.classList.remove('openNav1');
-  nav2.classList.toggle('openNav2');
+  nav2.classList.add('openNav2');
   nav3.classList.remove('openNav3');
-
+  nav1.innerHTML = `<i class="fas fa-gift"></i>`;
+  nav3.innerHTML = `<i class="fas fa-gift"></i>`;
   nav2.style.backgroundColor = 'white';
   nav2.innerHTML = `
   <i class="fas fa-heart"></i>
@@ -166,9 +173,10 @@ nav2.addEventListener('click', function(){
   <i class="fas fa-heart"></i>
   `;
 
-
+  clearInterval(nav1Loop);
+  clearInterval(nav3Loop);
   let nav2counter = 0;
-  setInterval(() => {
+  nav2Loop = setInterval(() => {
     switch(nav2counter) {
       case 0:
         nav2.innerHTML = `
@@ -202,8 +210,9 @@ nav2.addEventListener('click', function(){
 nav3.addEventListener('click', function(){
   nav1.classList.remove('openNav1');
   nav2.classList.remove('openNav2');
-  nav3.classList.toggle('openNav3');
-
+  nav3.classList.add('openNav3');
+  nav2.innerHTML = `<i class="fas fa-gift"></i>`;
+  nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   document.body.classList.add('bodyState2');
   
   nav3.style.backgroundColor = 'white';
@@ -226,15 +235,17 @@ nav3.addEventListener('click', function(){
   milo.classList.add('inview');
   setTimeout(() => {
     milo.classList.remove('inview'); 
-  }, 1000);
+  }, 1700);
 
   kispy.classList.add('inview');
   setTimeout(() => {
   kispy.classList.remove('inview'); 
   }, 1500);
 
+  clearInterval(nav2Loop);
+  clearInterval(nav1Loop);
   let nav3counter = 0;
-  setInterval(() => {
+  nav3Loop = setInterval(() => {
     switch(nav3counter) {
       case 0:
         nav3.innerHTML = `Best Wishes`;
@@ -253,9 +264,6 @@ nav3.addEventListener('click', function(){
   }, 3000);
 
 
-  setTimeout(() => {
-    nav3.innerHTML = `<i class="fas fa-glass-cheers"></i>`
-  }, 5000);
   nav3.classList.add ('gift3open');
 })
 
