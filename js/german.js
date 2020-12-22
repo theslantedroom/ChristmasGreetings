@@ -62,14 +62,14 @@ setInterval(() => {
   if (globalCounter == 1){
     banner.innerHTML = `
     <i class="fas fa-socks"></i>
-    <span>Fröhliche Weihnachten</span>
+    <span>guten rutsch ins neue jahr</span>
     <i class="fas fa-socks"></i>
     </i>`;
   };
   if (globalCounter == 0) {
     banner.innerHTML = `
     <i class="fas fa-socks"></i>
-    <span>Merry Christmas</span>
+    <span>Fröhliche Weihnachten</span>
     <i class="fas fa-socks"></i>
     </i>`;
   } ;
@@ -185,7 +185,7 @@ nav1.addEventListener('click', function(){
       case 0:
         nav1.innerHTML = `
         <i class="fas fa-candy-cane"></i>
-        from Annabel and Steve
+        und die katzen
         <i class="fas fa-candy-cane"></i>
         `
         break;
@@ -249,7 +249,7 @@ nav2.addEventListener('click', function(){
       case 0:
         nav2.innerHTML = `
         <i class="fas fa-heart"></i>
-        we will see you soon
+        wir freuen uns
         <i class="fas fa-heart"></i>
         `
         break;
@@ -319,7 +319,7 @@ nav3.addEventListener('click', function(){
   nav3Loop = setInterval(() => {
     switch(nav3counter) {
       case 0:
-        nav3.innerHTML = `Best Wishes`;
+        nav3.innerHTML = `wir haben dich lieb`;
         break;
       case 1:
         nav3.innerHTML = `Alles Gute`;
