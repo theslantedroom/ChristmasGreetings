@@ -28,6 +28,10 @@ const checkPresents = () => {
   document.querySelectorAll('nav')[3].style.display = 'none';
 
   setTimeout(() => {
+    document.getElementById('frame').style.backgroundImage = 'url("img/frame2.jpg")';
+  }, 2000);
+  
+  setTimeout(() => {
     sy.classList.add('inview');
     ab.classList.add('inview');
     milo.classList.add('inview');

@@ -218,8 +218,8 @@ body {
 	position: absolute;
 	height: 30vmin;
 	width: 30vmin;
-	max-width: 300px;
-	max-height: 300px;
+	max-width: 150px;
+	max-height: 150px;
 	background-size: contain;
 	z-index: 3;
 }
@@ -232,8 +232,8 @@ body {
 	position: absolute;
 	height: 30vmin;
 	width: 30vmin;
-	max-width: 300px;
-	max-height: 300px;
+	max-width: 150px;
+	max-height: 150px;
 	background-size: contain;
 	z-index: 3;
 }
@@ -247,8 +247,8 @@ body {
 	position: absolute;
 	height: 30vmin;
 	width: 30vmin;
-	max-width: 300px;
-	max-height: 300px;
+	max-width: 150px;
+	max-height: 150px;
 	background-size: contain;
 	z-index: 3;
 }
@@ -262,8 +262,8 @@ body {
 	position: absolute;
 	height: 30vmin;
 	width: 30vmin;
-	max-width: 300px;
-	max-height: 300px;
+	max-width: 150px;
+	max-height: 150px;
 	background-size: contain;
 	z-index: 3;
 }
