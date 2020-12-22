@@ -3,7 +3,7 @@
 // main counter
 let globalCounter = 1;
 
-setInterval(() => {
+const bannerLoop = setInterval(() => {
   globalCounter += 1
   if (globalCounter == 2){globalCounter = 0};
 }, 4000);
@@ -22,14 +22,13 @@ const presentOpen = {
 
 const checkPresents = () => {
   if (presentOpen[1] == true && presentOpen[2] == true && presentOpen[3] == true){
+    clearInterval(bannerLoop);
+    globalCounter += 5;
   document.querySelectorAll('nav')[0].style.display = 'none';
   document.querySelectorAll('nav')[1].style.display = 'none';
   document.querySelectorAll('nav')[2].style.display = 'none';
   document.querySelectorAll('nav')[3].style.display = 'none';
 
-  setTimeout(() => {
-    document.getElementById('frame').style.backgroundImage = 'url("img/frame2.jpg")';
-  }, 2000);
   
 
   setTimeout(() => {
@@ -61,26 +60,30 @@ const checkPresents = () => {
     <i class="fas fa-socks"></i>
     </i>`;
 
-setInterval(() => {
-  if (globalCounter == 1){
-    banner.innerHTML = `
-    <i class="fas fa-socks"></i>
-
-    <span>Merry Christmas</span>
-
-    <i class="fas fa-socks"></i>
-    </i>`;
-  } else {
-
-    banner.innerHTML = `
-    <i class="fas fa-socks"></i>
-
-    <span>Happy Holidays</span>
-
-    <i class="fas fa-socks"></i>
-    </i>`;
-  } ;
-}, 2000);
+    setInterval(() => {
+      if (globalCounter == 1){
+        banner.innerHTML = `
+        <i class="fas fa-socks"></i>    
+        <span>Happy Holidays</span>   
+        <i class="fas fa-socks"></i>
+        </i>`;
+      };   
+      if (globalCounter == 0) {    
+        banner.innerHTML = `
+        <i class="fas fa-socks"></i>  
+        <span>Merry Christmas</span>  
+        <i class="fas fa-socks"></i>
+        </i>`;
+      } ;  
+      if (globalCounter > 2) {  
+        banner.innerHTML = `
+        <i class="fas fa-socks"></i>   
+        <span>Goodbye</span>   
+        <i class="fas fa-socks"></i>
+        </i>`;
+      } ;
+    
+    }, 4000);
  
     // NAV
     createHTML('nav', "navSingleButton");
