@@ -313,7 +313,7 @@ nav3.addEventListener('click', function(){
         nav3.innerHTML = `Don we now our gay apparel`;
         break;
       case 1:
-        nav3.innerHTML = `Feliz Navidad`;
+        nav3.innerHTML = `Fa la la la la la la la!`;
         break;
       break;
       default:
