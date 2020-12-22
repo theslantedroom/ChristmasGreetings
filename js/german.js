@@ -23,12 +23,18 @@ const presentOpen = {
 const checkPresents = () => {
   if (presentOpen[1] == true && presentOpen[2] == true && presentOpen[3] == true){
   document.querySelectorAll('nav')[0].style.display = 'none';
-  document.querySelectorAll('nav')[1].innerHTML = 'Happy';
-  document.querySelectorAll('nav')[2].innerHTML = 'New';
-  document.querySelectorAll('nav')[3].innerHTML = 'Year';
+  document.querySelectorAll('nav')[1].style.display = 'none';
+  document.querySelectorAll('nav')[2].style.display = 'none';
+  document.querySelectorAll('nav')[3].style.display = 'none';
+
+  setTimeout(() => {
+    sy.classList.add('inview');
+    ab.classList.add('inview');
+    milo.classList.add('inview');
+    kispy.classList.add('inview');
+  }, 4000);
   };
 };
-
   
   function createHTML(type, className) {
     const newElement = document.createElement(type);

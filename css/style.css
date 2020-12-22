@@ -11,10 +11,8 @@ body {
 	height: 100vw;
 	display: flex;
 	justify-content: center;
-	/* align-items: center; */
-
-
 }
+
 .bodyState2{
 	background-image: url('../img/texture3dark.jpg');
 }
