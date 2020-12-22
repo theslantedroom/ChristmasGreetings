@@ -11,7 +11,24 @@ setInterval(() => {
 let nav1Loop;
 let nav2Loop;
 let nav3Loop;
-  
+
+
+
+const presentOpen = {
+  1: false,
+  2: false,
+  3: false
+};
+
+const checkPresents = () => {
+  if (presentOpen[1] == true && presentOpen[2] == true && presentOpen[3] == true){
+  document.querySelectorAll('nav')[0].style.display = 'none';
+  document.querySelectorAll('nav')[1].innerHTML = 'Happy';
+  document.querySelectorAll('nav')[2].innerHTML = 'New';
+  document.querySelectorAll('nav')[3].innerHTML = 'Year';
+  };
+};
+
   
   function createHTML(type, className) {
     const newElement = document.createElement(type);
@@ -19,7 +36,7 @@ let nav3Loop;
     document.getElementById('container').appendChild(newElement); 
   };
 
-  (function allBuildHTML(){
+(function allBuildHTML(){
 
     // Banner
     createHTML('div', "banner");
@@ -52,19 +69,7 @@ setInterval(() => {
     </i>`;
   } ;
 }, 2000);
-
-
-
-
-    banner.addEventListener('mouseover', function(){
-    banner.classList.add('mouseOverBanner');     
-    });
-
-    banner.addEventListener('mouseout', function(){
-    banner.classList.remove('mouseOverBanner');     
-    });
-  
-
+ 
     // NAV
     createHTML('nav', "navSingleButton");
     const navSingleButton = document.getElementsByClassName("navSingleButton")[0];
@@ -87,13 +92,15 @@ setInterval(() => {
     createMenuItem('div', "kispy", '', 'kispy');
 
     navSingleButton.innerHTML = `<span>
-    <i class="fas fa-gifts"></i>
+      ???  
     </span>`;
 
     navSingleButton.addEventListener('click', function(){
+      
       nav1.classList.remove('openNav1');
       nav2.classList.remove('openNav2');
       nav3.classList.remove('openNav3');
+
       clearInterval(nav1Loop);
       clearInterval(nav2Loop);
       clearInterval(nav3Loop);
@@ -103,9 +110,10 @@ setInterval(() => {
           newNavItem.classList.add('navSingleButtonOpen');
           newNavItem.innerHTML = `<i class="fas fa-gift"></i>`;
           }  
-          navSingleButton.innerHTML = `Open a Suprise`
-    });
 
+          navSingleButton.innerHTML = `<i class="fas fa-gifts"></i>`
+          checkPresents();
+    });
 }());
 
 
@@ -116,23 +124,29 @@ const nav3 = document.getElementById('nav3');
 const focusPresent = (close1, close2) => {
   document.getElementsByClassName("navItem")[close1].classList.remove('navSingleButtonOpen')
   document.getElementsByClassName("navItem")[close2].classList.remove('navSingleButtonOpen')
-  document.getElementsByClassName("navSingleButton")[0].innerHTML = `Open another?`
+  document.getElementsByClassName("navSingleButton")[0].innerHTML = `X`
 };
 
 
+
+
+// Buttons Presents OPEN
+
 nav1.addEventListener('click', function(){
+  focusPresent(1,2);
+  presentOpen[1] = true; 
   nav1.classList.add('openNav1');
   nav2.classList.remove('openNav2');
   nav3.classList.remove('openNav3');
   clearInterval(nav1Loop);
   clearInterval(nav2Loop);
   clearInterval(nav3Loop);
-  focusPresent(1,2);
+  
   document.getElementById("sfx1").play();
 
   nav2.innerHTML = `<i class="fas fa-gift"></i>`;
   nav3.innerHTML = `<i class="fas fa-gift"></i>`;
-  nav1.style.backgroundColor = '#9e0000';
+  nav1.style.backgroundColor = 'initial';
 
   let milo=  document.getElementById('milo');
   let kispy=  document.getElementById('kispy');
@@ -140,12 +154,12 @@ nav1.addEventListener('click', function(){
   milo.classList.add('inview');
   setTimeout(() => {
     milo.classList.remove('inview'); 
-  }, 800);
+  }, 1800);
 
   kispy.classList.add('inview');
   setTimeout(() => {
   kispy.classList.remove('inview'); 
-  }, 800);
+  }, 1800);
 
   nav1.innerHTML = `
   <i class="fas fa-candy-cane"></i>
@@ -185,17 +199,19 @@ nav1.addEventListener('click', function(){
 
 
 nav2.addEventListener('click', function(){
+  focusPresent(0,2);
+  presentOpen[2] = true; 
   nav1.classList.remove('openNav1');
   nav2.classList.add('openNav2');
   nav3.classList.remove('openNav3');
   clearInterval(nav1Loop);
   clearInterval(nav2Loop);
   clearInterval(nav3Loop);
-  focusPresent(0,2);
-  document.getElementById("sfx2").play();
+  
+  // document.getElementById("sfx2").play();
   nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   nav3.innerHTML = `<i class="fas fa-gift"></i>`;
-  nav2.style.backgroundColor = '#9e0000';
+  nav2.style.backgroundColor = 'initial';
 
   let sy=  document.getElementById('sy');
   let ab=  document.getElementById('ab');
@@ -203,11 +219,11 @@ nav2.addEventListener('click', function(){
   sy.classList.add('inview');
   setTimeout(() => {
   sy.classList.remove('inview'); 
-  }, 500);
+  }, 1500);
   ab.classList.add('inview');
   setTimeout(() => {
   ab.classList.remove('inview'); 
-  }, 500);
+  }, 1500);
 
   nav2.innerHTML = `
   <i class="fas fa-heart"></i>
@@ -245,19 +261,21 @@ nav2.addEventListener('click', function(){
 
 
 nav3.addEventListener('click', function(){
+  focusPresent(0,1);
+  presentOpen[3] = true; 
   nav1.classList.remove('openNav1');
   nav2.classList.remove('openNav2');
   nav3.classList.add('openNav3');
   clearInterval(nav1Loop);
   clearInterval(nav2Loop);
   clearInterval(nav3Loop);
-  focusPresent(0,1);
-  document.getElementById("sfx3").play();
+  
+  // document.getElementById("sfx3").play();
   nav2.innerHTML = `<i class="fas fa-gift"></i>`;
   nav1.innerHTML = `<i class="fas fa-gift"></i>`;
   document.body.classList.add('bodyState2');
   
-  nav3.style.backgroundColor = '#9e0000';
+  nav3.style.backgroundColor = 'initial';
   nav3.innerHTML = `<i class="fas fa-glass-cheers"></i>`;
   let sy=  document.getElementById('sy');
   let ab=  document.getElementById('ab');
